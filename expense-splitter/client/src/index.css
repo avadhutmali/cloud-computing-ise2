@@ -1,0 +1,228 @@
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #e0e0e0;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── App Layout ── */
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #f7971e, #ffd200);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: #9e9eb8;
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+
+/* ── Card ── */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.card h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+/* ── Form ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.form-grid input:last-child {
+  grid-column: 1 / -1;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input::placeholder {
+  color: #7a7a9e;
+}
+
+input:focus {
+  border-color: #ffd200;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(90deg, #f7971e, #ffd200);
+  border: none;
+  border-radius: 10px;
+  color: #1a1a2e;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(255, 210, 0, 0.3);
+}
+
+/* ── Balance List ── */
+.balance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.balance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+}
+
+.balance-item .from {
+  font-weight: 600;
+  color: #ff6b6b;
+}
+
+.balance-item .arrow {
+  color: #7a7a9e;
+  font-size: 0.85rem;
+}
+
+.balance-item .to {
+  font-weight: 600;
+  color: #51cf66;
+}
+
+.balance-item .amount {
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #ffd200;
+}
+
+.empty {
+  color: #7a7a9e;
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
+}
+
+/* ── Table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9e9eb8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+tbody td {
+  padding: 0.7rem 0.8rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.amount-cell {
+  font-weight: 600;
+  color: #ffd200;
+}
+
+.date-cell {
+  color: #9e9eb8;
+  font-size: 0.85rem;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(81, 207, 102, 0.15);
+  color: #51cf66;
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.btn-delete {
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: #ff6b6b;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.btn-delete:hover {
+  background: rgba(255, 107, 107, 0.25);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  table {
+    font-size: 0.82rem;
+  }
+}
